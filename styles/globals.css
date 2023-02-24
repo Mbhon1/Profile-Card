@@ -6,9 +6,13 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: rgba(0, 0, 0, 0.788);
+/* body {
+  background-color: whitesmoke;
 }
+
+body.dark {
+  background-color: #282d35;
+} */
 
 main.dark {
   background-color: #282d35;

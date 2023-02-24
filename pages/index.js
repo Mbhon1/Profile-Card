@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
+import { Inter, Josefin_Sans } from "@next/font/google";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Interests from "@/components/Interests";
@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
+const josefin = Josefin_Sans({ weight: ["700", "700"], subsets: ["latin"] });
 
 export default function Home() {
   const [darkMode, setDarkmode] = useState({
@@ -50,15 +51,16 @@ export default function Home() {
       <Navbar toggleDarkMode={handleChange} darkMode={darkMode.isOn} />
 
       <main
-        className={`shadow-md max-w-[300px] m-auto text-white tracking-tight leading-6 ${
+        className={`shadow-xl max-w-[300px] m-auto text-black tracking-tight leading-6 ${
           darkMode.isOn ? "dark" : ""
-        } main--title`}
+        } ${josefin.className} `}
       >
         <Hero
           name="Mbhoni Baloyi"
           title="Junior Network Admin"
           email="email"
           linkedin="LinkedIn"
+          darkMode={darkMode.isOn}
         />
         <About
           title="About"

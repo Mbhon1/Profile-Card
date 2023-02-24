@@ -6,7 +6,7 @@ import { GrLinkedin } from "react-icons/gr";
 
 const Hero = (props) => {
   return (
-    <section>
+    <section className={`${props.darkMode ? "dark" : ""}`}>
       <div>
         <Image src={me} alt="Mbhoni portait" />
       </div>
@@ -14,7 +14,9 @@ const Hero = (props) => {
       <div className="flex flex-col items-center content-center justify-center px-4 py-8">
         <h3 className="text-[34px] font-extrabold">{props.name}</h3>
         <div className="self-center">
-          <p className="py-4 text-gray-600">{props.title}</p>
+          <p className="py-4 text-teal-700 dark:text-slate-400">
+            {props.title}
+          </p>
           <a className="text-cyan-600" href="#">
             Mbhoni Website
           </a>
@@ -22,7 +24,7 @@ const Hero = (props) => {
 
         <div className="grid items-center grid-cols-1 gap-4 py-8">
           <div className="">
-            <button className="rounded-md bg-white text-black text-xl flex justify-center font-bold items-center h-[40px] w-[10em]  uppercase p-6 hover:opacity-[0.7] hover:scale-[0.9] transition duration-500">
+            <button className="rounded-md text-white bg-black dark:bg-white dark:text-black text-xl flex justify-center font-bold items-center h-[40px] w-[10em]  uppercase p-6 hover:opacity-[0.7] hover:scale-[0.9] transition duration-500">
               <IoIosMail className="mr-4 text-4xl" />
               <a href="mailto:mbhonibaloyi9@gmail.com">{props.email}</a>
             </button>
