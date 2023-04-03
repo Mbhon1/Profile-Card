@@ -3,7 +3,7 @@ import { Josefin_Sans } from "@next/font/google";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Interests from "../components/Interests";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { ButtonGroup, Card, Flex, useDisclosure } from "@chakra-ui/react";
 
