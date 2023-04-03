@@ -1,31 +1,22 @@
 import Head from "next/head";
-import { Inter, Josefin_Sans } from "@next/font/google";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Interests from "@/components/Interests";
+import { Josefin_Sans } from "@next/font/google";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Interests from "../components/Interests";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import { useState } from "react";
+import Navbar from "../components/Navbar";
+import { ButtonGroup, Card, Flex, useDisclosure } from "@chakra-ui/react";
 
-const inter = Inter({ subsets: ["latin"] });
-const josefin = Josefin_Sans({ weight: ["700", "700"], subsets: ["latin"] });
+export const josefin = Josefin_Sans({
+  weight: ["700", "700"],
+  subsets: ["latin"],
+});
 
 export default function Home() {
-  const [darkMode, setDarkmode] = useState({
-    isOn: false,
-  });
-
-  function handleChange() {
-    setDarkmode((prevState) => ({
-      ...prevState,
-      isOn: !prevState.isOn,
-    }));
-  }
-
   return (
     <>
       <Head>
-        <title>Profile Card</title>
+        <title>Mbhoni Card</title>
         <meta name="description" content="Mbhoni's profile card." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
@@ -48,44 +39,27 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
 
-      <Navbar toggleDarkMode={handleChange} darkMode={darkMode.isOn} />
+      <Navbar toggleDarkMode={""} darkMode={""} />
 
-      <main
-        className={`shadow-xl max-w-[300px] m-auto text-black tracking-tight leading-6 ${
-          darkMode.isOn ? "dark" : ""
-        } ${josefin.className} `}
+      <Card
+        className={`shadow-xl max-w-[300px] m-auto text-black tracking-tight leading-6 ${josefin.className} `}
       >
         <Hero
           name="Mbhoni Baloyi"
-          title="Junior Network Admin"
+          title="Junior FrontEnd Dev"
           email="email"
-          linkedin="LinkedIn"
-          darkMode={darkMode.isOn}
+          linkedin="linkedin"
+          emailLink="mailto:mbhonibaloyi9@gmail.com"
+          linkedinLink="https://www.linkedin.com/in/mbhoni-baloyi-6870ba175"
         />
-        <About
-          title="About"
-          desc="I am a web developer with a background in networking. 
-                I have always been interested in technology and have a 
-                strong foundation in computer systems. Recently, 
-                I have been focusing on learning web development 
-                and have been enjoying the challenge of building 
-                dynamic and interactive websites. 
-                I am constantly striving to improve 
-                my skills and stay up-to-date with the 
-                latest technologies in the field."
-        />
-        <Interests
-          title="Interests"
-          desc="In my free time, I enjoy exploring new technologies and 
-                staying up-to-date with the latest developments in 
-                web development. 
-                I also enjoy participating in online coding challenges and working on personal projects to expand my skillset. 
-                In addition to my interest in technology, 
-                I enjoy video gaming and experiencing different cultures, 
-                as well as spending time with my family and friends."
-        />
+        <Flex flexDirection="column" justifyItems="center" alignItems="center">
+          <ButtonGroup spacing={6}>
+            <About desc="I am a web developer with a background in networking. I have always been interested in technology and have a strong foundation in computer systems. Recently, I have been focusing on learning web development and have been enjoying the challenge of building dynamic and interactive websites. I am constantly striving to improve my skills and stay up-to-date with the latest technologies in the field." />
+            <Interests desc="In my free time, I enjoy exploring new technologies and staying up-to-date with the latest developments in web development. I also enjoy participating in online coding challenges and working on personal projects to expand my skillset. In addition to my interest in technology, I enjoy video gaming and experiencing different cultures, as well as spending time with my family and friends." />
+          </ButtonGroup>
+        </Flex>
         <Footer />
-      </main>
+      </Card>
     </>
   );
 }

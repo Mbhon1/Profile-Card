@@ -1,11 +1,40 @@
-import React from "react";
+import {
+  Button,
+  Modal,
+  ModalContent,
+  ModalCloseButton,
+  ModalBody,
+  ModalOverlay,
+  ModalHeader,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { josefin } from "../pages";
 
-const About = (props) => {
+const About = ({ desc }) => {
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
   return (
-    <div className="px-4">
-      <h3 className="pb-3 font-semibold text-xl">{props.title}</h3>
-      <p className="tracking-tighter text-sm">{props.desc}</p>
-    </div>
+    <>
+      <Button
+        onClick={onOpen}
+        colorScheme="linkedin"
+        size="md"
+        variant="outline"
+      >
+        {"About"}
+      </Button>
+
+      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+        <ModalOverlay />
+
+        <ModalContent className={`${josefin.className}`}>
+          <ModalHeader fontWeight="extrabold">{"About Me"}</ModalHeader>
+          <ModalCloseButton />
+
+          <ModalBody>{desc}</ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 

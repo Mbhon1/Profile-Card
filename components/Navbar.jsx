@@ -1,20 +1,38 @@
+import {
+  Flex,
+  Spacer,
+  Text,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
+import { Toggler } from "./Toggler";
 
-const Navbar = (props) => {
+const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const navBg = useColorModeValue("white", "blackAlpha.900");
+
   return (
-    <div>
-      <nav className={props.darkMode ? "dark" : ""}>
-        <h3 className="nav--logo_text">Profile Card</h3>
-
-        <div className="toggler">
-          <p className="toggler--light">Light</p>
-          <div className="toggler--slider" onClick={props.toggleDarkMode}>
-            <div className="toggler--slider--circle"></div>
-          </div>
-          <p className="toggler--dark">Dark</p>
+    <>
+      <Flex
+        h="10vh"
+        alignItems="center"
+        p={4}
+        position="sticky"
+        top={0}
+        zIndex="sticky"
+        w="full"
+        bg={navBg}
+      >
+        <Text fontSize="xl" fontWeight="bold">
+          Profile Card
+        </Text>
+        <Spacer />
+        <div>
+          <Toggler />
         </div>
-      </nav>
-    </div>
+      </Flex>
+    </>
   );
 };
 
