@@ -14,6 +14,7 @@ const Hero = (props) => {
           src="https://imagetolink.com/ib/RDzg5zPcyI.jpg"
           alt="Mbhoni portait"
           size="3xl" /* className="rounded-b-2xl" */
+          loading="eager"
         />
       </div>
 
@@ -23,6 +24,7 @@ const Hero = (props) => {
           <p className="py-4 text-teal-700 dark:text-slate-400">
             {props.title}
           </p>
+          {/*//TODO*/}
           {/*<a className="text-cyan-600" href="#">
             Mbhoni Website
           </a>*/}
