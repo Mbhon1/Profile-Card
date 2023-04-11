@@ -20,14 +20,14 @@ const Hero = (props) => {
 
       <div className="flex flex-col items-center content-center justify-center px-4 py-8">
         <h3 className="text-[34px] font-extrabold">{props.name}</h3>
-        <div className="self-center">
+        <div className="self-center text-center pb-3">
           <p className="py-4 text-teal-700 dark:text-slate-400">
             {props.title}
           </p>
-          {/*//TODO*/}
-          {/*<a className="text-cyan-600" href="#">
-            Mbhoni Website
-          </a>*/}
+
+          <a className="text-cyan-600" href="https://mbhon1-website.vercel.app">
+            Website
+          </a>
         </div>
 
         <div className="grid items-center grid-cols-1 gap-4 py-1">
