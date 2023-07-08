@@ -9,6 +9,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { josefin } from "../pages";
+import { BodyAnimation } from "./Interests";
 
 const About = ({ desc }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -38,7 +39,9 @@ const About = ({ desc }) => {
             {aboutDetails.title.modHeader}
           </ModalHeader>
           <ModalCloseButton />
-          <ModalBody fontSize={"xl"}>{aboutDetails.desc}</ModalBody>
+          <ModalBody fontSize={"xl"}>
+            <BodyAnimation>{aboutDetails.desc}</BodyAnimation>
+          </ModalBody>
         </ModalContent>
       </Modal>
     </>
