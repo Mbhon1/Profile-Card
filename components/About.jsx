@@ -12,6 +12,13 @@ import { josefin } from "../pages";
 
 const About = ({ desc }) => {
   const { isOpen, onClose, onOpen } = useDisclosure();
+  const aboutDetails = {
+    desc: "I am a web developer with a background in networking. I have always been interested in technology and have a strong foundation in computer systems. Recently, I have been focusing on learning web development and have been enjoying the challenge of building dynamic and interactive websites. I am constantly striving to improve my skills and stay up-to-date with the latest technologies in the field.",
+    title: {
+      abt: "About",
+      modHeader: "Get To Know Mbhoni",
+    },
+  };
 
   return (
     <>
@@ -21,17 +28,17 @@ const About = ({ desc }) => {
         size="md"
         variant="outline"
       >
-        {"About"}
+        {aboutDetails.title.abt}
       </Button>
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-
         <ModalContent className={`${josefin.className}`}>
-          <ModalHeader fontWeight="extrabold">{"About Me"}</ModalHeader>
+          <ModalHeader fontWeight="extrabold">
+            {aboutDetails.title.modHeader}
+          </ModalHeader>
           <ModalCloseButton />
-
-          <ModalBody>{desc}</ModalBody>
+          <ModalBody fontSize={"xl"}>{aboutDetails.desc}</ModalBody>
         </ModalContent>
       </Modal>
     </>

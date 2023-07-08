@@ -39,23 +39,16 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
 
-      <Navbar toggleDarkMode={""} darkMode={""} />
+      <Navbar />
 
       <Card
         className={`shadow-xl max-w-[300px] m-auto text-black tracking-tight leading-6 ${josefin.className} `}
       >
-        <Hero
-          name="Mbhoni Baloyi"
-          title="Junior FrontEnd Dev"
-          email="email"
-          linkedin="linkedin"
-          emailLink="mailto:mbhonibaloyi9@gmail.com"
-          linkedinLink="https://www.linkedin.com/in/mbhoni-baloyi-6870ba175"
-        />
+        <Hero />
         <Flex flexDirection="column" justifyItems="center" alignItems="center">
           <ButtonGroup spacing={6}>
-            <About desc="I am a web developer with a background in networking. I have always been interested in technology and have a strong foundation in computer systems. Recently, I have been focusing on learning web development and have been enjoying the challenge of building dynamic and interactive websites. I am constantly striving to improve my skills and stay up-to-date with the latest technologies in the field." />
-            <Interests desc="In my free time, I enjoy exploring new technologies and staying up-to-date with the latest developments in web development. I also enjoy participating in online coding challenges and working on personal projects to expand my skillset. In addition to my interest in technology, I enjoy video gaming and experiencing different cultures, as well as spending time with my family and friends." />
+            <About />
+            <Interests />
           </ButtonGroup>
         </Flex>
         <Footer />

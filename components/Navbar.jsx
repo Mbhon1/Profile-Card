@@ -5,12 +5,18 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import React from "react";
 import { Toggler } from "./Toggler";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const navBg = useColorModeValue("white", "blackAlpha.900");
+  const logo = (
+    <Link href={"/"}>
+      <div className="text-[1.5rem]">Profile Card</div>
+    </Link>
+  );
 
   return (
     <>
@@ -24,9 +30,7 @@ const Navbar = () => {
         w="full"
         bg={navBg}
       >
-        <Text fontSize="xl" fontWeight="bold">
-          Profile Card
-        </Text>
+          {logo}
         <Spacer />
         <div>
           <Toggler />
