@@ -120,7 +120,7 @@ const HeroImg = ({ id }) => {
         viewport={{ once: true }}
         onViewportEnter={() => setIsInView(true)}
       >
-        <img
+        <Image
           src={`/${id}.jpg`}
           srcSet={`/${id}.jpg 480w, /${id}.jpg 1080w`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

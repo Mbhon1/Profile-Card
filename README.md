@@ -1,5 +1,5 @@
 <p align="center">
-# Mbhoni's Profile Card
+Mbhoni's Profile Card
 </p>
 
 ---

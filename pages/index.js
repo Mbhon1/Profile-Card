@@ -13,10 +13,12 @@ export const josefin = Josefin_Sans({
 });
 
 export default function Home() {
+  const title = "Mbhoni\'s Profile Card"
+
   return (
     <>
       <Head>
-        <title>Mbhoni's Profile Card</title>
+        <title>{title}</title>
         <meta name="description" content="Mbhoni's profile card." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
