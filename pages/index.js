@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mbhoni Card</title>
+        <title>Mbhoni's Profile Card</title>
         <meta name="description" content="Mbhoni's profile card." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link

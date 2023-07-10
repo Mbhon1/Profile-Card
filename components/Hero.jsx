@@ -50,16 +50,6 @@ const Hero = () => {
     </a>
   );
 
-  const img = (
-    <Image
-      objectFit="cover"
-      src={heroDetails.link.img}
-      alt={heroDetails.alt}
-      size="3xl"
-      loading="eager"
-    />
-  );
-
   return (
     <section id="hero">
       {/* PERF: rendering the image and sourcing from public using "id" attribute*/}
