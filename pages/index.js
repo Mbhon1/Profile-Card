@@ -13,7 +13,7 @@ export const josefin = Josefin_Sans({
 });
 
 export default function Home() {
-  const title = "Mbhoni\'s Profile Card"
+  const title = "Mbhoni's Profile Card";
 
   return (
     <>
@@ -42,17 +42,11 @@ export default function Home() {
       </Head>
 
       <Navbar />
-
+      {/* TEST: tailwindcss responsive for large and small screens*/}
       <Card
-        className={`shadow-xl max-w-[300px] m-auto text-black tracking-tight leading-6 ${josefin.className} `}
+        className={`shadow-xl max-w-[300px] m-auto md:mt-10 md:max-w-xl ${josefin.className} `}
       >
         <Hero />
-        <Flex flexDirection="column" justifyItems="center" alignItems="center">
-          <ButtonGroup spacing={6}>
-            <About />
-            <Interests />
-          </ButtonGroup>
-        </Flex>
         <Footer />
       </Card>
     </>
