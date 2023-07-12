@@ -9,7 +9,6 @@ This profile card is a nutshell of who Mbhoni is and how to get in contact with 
 ## Tech Used
 
 <p align="center">
-<h3>
 <a href="https://nextjs.org">
 <img alt="next.js" src="https://img.shields.io/badge/Next-js?style=flat-square&logo=nextdotjs&labelColor=%23000000&color=%23000000
 ">
@@ -30,7 +29,6 @@ This profile card is a nutshell of who Mbhoni is and how to get in contact with 
 <img src="https://img.shields.io/badge/Framer-motion?style=flat-square&logo=framer&labelColor=%23000000&color=%23000000
 ">
 </a>
-</h3>
 </p>
 
 Building this project I used the following technology:
