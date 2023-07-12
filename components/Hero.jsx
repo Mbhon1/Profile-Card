@@ -120,16 +120,11 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 
 // TEST: trying to animate hero-img
 const HeroImg = ({ id }) => {
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
-  function handleInView() {
-    setIsInView(true);
-  }
-
-  function handleLoading() {
-    setIsLoaded(!true);
-  }
+  const handleInView = () => setIsInView(true);
+  const handleLoading = () => setIsLoaded(true);
 
   return (
     <section id="hero-img">
