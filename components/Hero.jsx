@@ -119,7 +119,8 @@ const HeroImg = ({ id }) => {
         transition={{ duration: 1, delay: 1 }}
         viewport={{ once: true }}
         onViewportEnter={() => setIsInView(true)}
-      >
+      > 
+    {/* WARN: Try a different image component*/}
         <Image
           src={`/${id}.jpg`}
           srcSet={`/${id}.jpg 480w, /${id}.jpg 1080w`}
@@ -133,3 +134,5 @@ const HeroImg = ({ id }) => {
     </section>
   );
 };
+
+
