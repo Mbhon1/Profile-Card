@@ -1,25 +1,21 @@
-import {
-  Flex,
-  Spacer,
-  Text,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Flex, Spacer, useColorModeValue } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { Toggler } from "./Toggler";
 
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
   const navBg = useColorModeValue("white", "blackAlpha.900");
+  const title: string = "Profile Card"
   const logo = (
     <Link href={"/"}>
-      <div className="text-[1.5rem]">Profile Card</div>
+      <div>
+        <h2 className="text-[1.5rem] md:text-[2.2rem]">{title}</h2>
+      </div>
     </Link>
   );
 
   return (
-    <>
+    <section id="navbar">
       <Flex
         h="10vh"
         alignItems="center"
@@ -30,13 +26,13 @@ const Navbar = () => {
         w="full"
         bg={navBg}
       >
-          {logo}
+        {logo}
         <Spacer />
-        <div>
+        <div id="navbar-toggle">
           <Toggler />
         </div>
       </Flex>
-    </>
+    </section>
   );
 };
 

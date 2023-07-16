@@ -1,11 +1,9 @@
 import Head from "next/head";
 import { Josefin_Sans } from "@next/font/google";
 import Hero from "../components/Hero";
-import About from "../components/About";
-import Interests from "../components/Interests";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { ButtonGroup, Card, Flex, useDisclosure } from "@chakra-ui/react";
+import { Card } from "@chakra-ui/react";
 
 export const josefin = Josefin_Sans({
   weight: ["700", "700"],
@@ -42,7 +40,6 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      {/* TEST: tailwindcss responsive for large and small screens*/}
       <Card
         className={`shadow-xl max-w-[300px] m-auto md:mt-10 md:max-w-xl ${josefin.className} `}
       >

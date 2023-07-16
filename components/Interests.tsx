@@ -10,11 +10,12 @@ import {
 } from "@chakra-ui/react";
 import { josefin } from "../pages";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { MutableRefObject, useRef } from "react";
+import { IntDetails } from "./constants";
 
 const Interests = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const interestsDetails = {
+  const interestsDetails: IntDetails = {
     desc: "In my free time, I enjoy exploring new technologies and staying up-to-date with the latest developments in web development. I also enjoy participating in online coding challenges and working on personal projects to expand my skillset. In addition to my interest in technology, I enjoy video gaming and experiencing different cultures, as well as spending time with my family and friends.",
     title: {
       modHeader: "Mbhoni's Interests",
@@ -50,12 +51,12 @@ const Interests = () => {
 
 export default Interests;
 
-export const BodyAnimation = ({ children }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+export const BodyAnimation = ({ children }: any) => {
+  const refer: MutableRefObject<any> = useRef(null);
+  const isInView: boolean = useInView(refer, { once: true });
 
   return (
-    <section ref={ref}>
+    <section ref={refer}>
       <span
         style={{
           transform: isInView ? "none" : "translateX(-200px)",

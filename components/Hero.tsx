@@ -6,8 +6,9 @@ import { useState } from "react";
 import { Image } from "@unpic/react";
 import About from "./About";
 import Interests from "./Interests";
+import { HeroDetails } from "./constants";
 
-const heroDetails = {
+const heroDetails: HeroDetails = {
   title: {
     role: "Junior FrontEnd Dev",
     name: "Mbhoni Baloyi",
@@ -25,9 +26,12 @@ const heroDetails = {
 };
 
 const Hero = () => {
+  {
+    /* TODO: change button colors when switching modes*/
+  }
   const mailBtn = useColorModeValue("white", "black");
 
-  const emailBtn = (
+  const emailBtn: JSX.Element = (
     <motion.button
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.8 }}
@@ -38,7 +42,7 @@ const Hero = () => {
     </motion.button>
   );
 
-  const linkedInBtn = (
+  const linkedInBtn: JSX.Element = (
     <motion.button
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.8 }}
@@ -53,7 +57,6 @@ const Hero = () => {
     <section id="hero">
       <div className="md:max-w-2xl tracking-wide">
         <div className="md:flex">
-          {/* PERF: rendering the image and sourcing from public using "id" attribute*/}
           <div id="hero-img" className="">
             <HeroImg id={"me"} />
           </div>
@@ -118,10 +121,9 @@ export default Hero;
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
-// TEST: trying to animate hero-img
-const HeroImg = ({ id }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
+const HeroImg = ({ id }: any) => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [isInView, setIsInView] = useState<boolean>(false);
 
   const handleInView = () => setIsInView(true);
   const handleLoading = () => setIsLoaded(true);
@@ -139,7 +141,6 @@ const HeroImg = ({ id }) => {
         viewport={{ once: true }}
         onViewportEnter={handleInView}
       >
-        {/* TEST: Try a different image component*/}
         <Image
           src={`/${id}.jpg`}
           onLoad={handleLoading}
